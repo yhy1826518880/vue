@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- vue父子传值 -->
+    <div id="app">
+        <child-a :cz="msg"></child-a>
+    </div>
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+    Vue.component('child-a',{
+        template: `<div>传值显示处：{{cz}}</div>`,
+        props: ['cz']
+    })
+    new Vue({
+        el: '#app',
+        data: {
+            msg: '我是来源于父组件的值msg'
+        }
+    })
+    </script>
+</body>
+</html>
